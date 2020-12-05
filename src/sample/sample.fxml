@@ -24,10 +24,10 @@
    <children>
       <BorderPane prefHeight="200.0" prefWidth="200.0">
          <top>
-            <Button fx:id="zmensiBtn" mnemonicParsing="false" onAction="#zmensiButtony" text="Zmensi" BorderPane.alignment="CENTER" />
+            <Button fx:id="zmensiBtn" mnemonicParsing="false" onAction="#decrease_font_size" text="Zmensi" BorderPane.alignment="CENTER" />
          </top>
          <left>
-            <Button fx:id="zvacsiBtn" mnemonicParsing="false" onAction="#zvacsiButtony" text="Zvacsi" textAlignment="CENTER" BorderPane.alignment="CENTER" />
+            <Button fx:id="zvacsiBtn" mnemonicParsing="false" onAction="#increase_font_size" text="Zvacsi" textAlignment="CENTER" BorderPane.alignment="CENTER" />
          </left>
          <center>
             <Label fx:id="labelAhoj" style="-fx-background-color: yellow;" text="Ahoj" BorderPane.alignment="CENTER" />
