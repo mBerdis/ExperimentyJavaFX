@@ -74,8 +74,8 @@ public class Controller {
                 borderpane_uloha2.setVisible(true);
             }
 
-            login.setText(null);
-            password.setText(null);
+            login.setText("");
+            password.setText("");
         }
     }
 }
