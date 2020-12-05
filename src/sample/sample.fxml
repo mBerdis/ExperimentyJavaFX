@@ -28,7 +28,7 @@
       <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
    </columnConstraints>
    <children>
-      <BorderPane prefHeight="200.0" prefWidth="200.0">
+      <BorderPane fx:id="borderpane_uloha2" prefHeight="200.0" prefWidth="200.0">
          <center>
             <Label fx:id="labelAhoj" style="-fx-background-color: yellow;" text="Ahoj" BorderPane.alignment="CENTER" />
          </center>
@@ -54,16 +54,16 @@
       </AnchorPane>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3">
          <children>
-            <Circle fx:id="circle1" fill="DODGERBLUE" layoutX="157.0" layoutY="30.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" />
-            <ColorPicker layoutX="5.0" layoutY="4.0" />
-            <ColorPicker layoutX="5.0" layoutY="33.0" />
+            <Circle fx:id="uloha5_circle" fill="DODGERBLUE" layoutX="157.0" layoutY="30.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" />
+            <ColorPicker fx:id="outer_color" layoutX="5.0" layoutY="4.0" onAction="#change_outer_color" />
+            <ColorPicker fx:id="inner_color" layoutX="5.0" layoutY="33.0" onAction="#change_inner_color" />
          </children>
       </AnchorPane>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
          <children>
-            <TextField layoutX="14.0" layoutY="1.0" />
-            <PasswordField layoutX="14.0" layoutY="27.0" />
-            <Button layoutX="69.0" layoutY="53.0" mnemonicParsing="false" text="Skry" />
+            <TextField fx:id="login" layoutX="14.0" layoutY="1.0" />
+            <PasswordField fx:id="password" layoutX="14.0" layoutY="27.0" />
+            <Button fx:id="hide" layoutX="69.0" layoutY="53.0" mnemonicParsing="false" onAction="#submit" text="Skry" />
          </children>
       </AnchorPane>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
