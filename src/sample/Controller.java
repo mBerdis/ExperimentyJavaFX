@@ -1,13 +1,20 @@
 package sample;
+import javafx.animation.AnimationTimer;
 import javafx.event.ActionEvent;
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.*;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 
-public class Controller {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class Controller implements Initializable
+{
 
     public BorderPane borderpane_uloha2;
     public Label labelAhoj;
@@ -21,6 +28,11 @@ public class Controller {
     public TextField login;
     public PasswordField password;
     public Button hide;
+
+    public AnchorPane anchorPaneBullet;
+    Rectangle bullet;
+    AnimationTimer timer;
+    boolean toRight=true;
 
     public void decrease_font_size()
     {
@@ -77,5 +89,50 @@ public class Controller {
             login.setText("");
             password.setText("");
         }
+    }
+
+    public void bullet_start()
+    {
+        bullet=new Rectangle(20,5,Color.BLACK);
+        bullet.setY(50);
+        bullet.setX(0);
+        anchorPaneBullet.getChildren().add(bullet);
+        timer.start();
+
+
+
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle)
+    {
+            timer=new AnimationTimer()
+            {
+            @Override
+            public void handle(long l)
+            {
+                if (toRight)
+                {
+                    bullet.setX(bullet.getX()+5);
+                    if (bullet.getX()>anchorPaneBullet.getPrefWidth())
+                    {
+                        toRight=false;
+                        bullet.setX(anchorPaneBullet.getPrefWidth());
+                    }
+                }
+                else
+                {
+                    bullet.setX(bullet.getX() - 5);
+
+                    if (bullet.getX() < 0)
+                    {
+                        toRight = true;
+                        bullet.setX(0);
+                    }
+
+                }
+            }
+        };
+
     }
 }

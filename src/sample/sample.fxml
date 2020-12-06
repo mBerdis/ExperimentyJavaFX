@@ -66,9 +66,9 @@
             <Button fx:id="hide" layoutX="69.0" layoutY="53.0" mnemonicParsing="false" onAction="#submit" text="Skry" />
          </children>
       </AnchorPane>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+      <AnchorPane fx:id="anchorPaneBullet" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
          <children>
-            <Button layoutX="65.0" layoutY="14.0" mnemonicParsing="false" text="Vystreľ" />
+            <Button layoutX="65.0" layoutY="14.0" mnemonicParsing="false" onAction="#bullet_start" text="Vystreľ" />
          </children>
       </AnchorPane>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
