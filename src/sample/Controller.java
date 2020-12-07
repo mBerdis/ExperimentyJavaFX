@@ -35,6 +35,12 @@ public class Controller implements Initializable
     Rectangle bullet;
     AnimationTimer timer;
     boolean toRight=true;
+    public boolean check_duha =true;
+    public Pane duha;
+    public boolean check_kruh =true;
+    public Pane Kruh;
+    public Slider slider;
+    public TextField text_slider;
 
     public void decrease_font_size()
     {
@@ -140,9 +146,7 @@ public class Controller implements Initializable
 
     //úloha9
 
-    public boolean check_duha =true;
-    @FXML
-    Pane duha;
+
     public void Duha_hide()
     {
           if (check_duha)
@@ -157,9 +161,7 @@ public class Controller implements Initializable
           }
     }
 
-    public boolean check_kruh =true;
-    @FXML
-    Pane Kruh;
+
     public void Kruh_hide()
     {
         if (check_kruh)
@@ -173,6 +175,16 @@ public class Controller implements Initializable
             check_kruh=true;
         }
     }
+
+
+
+    //úloha10
+
+   public void slider_change()
+   {
+   hide.setPrefWidth(50*slider.getValue());
+   text_slider.setText(String.valueOf(50*slider.getValue()));
+   }
 
 
 }

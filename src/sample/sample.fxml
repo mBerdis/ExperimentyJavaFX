@@ -8,6 +8,7 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
@@ -67,7 +68,7 @@
          <children>
             <TextField fx:id="login" layoutX="14.0" layoutY="1.0" />
             <PasswordField fx:id="password" layoutX="14.0" layoutY="27.0" />
-            <Button fx:id="hide" layoutX="69.0" layoutY="53.0" mnemonicParsing="false" onAction="#submit" text="Skry" />
+            <Button fx:id="hide" layoutX="69.0" layoutY="53.0" maxHeight="10000.0" maxWidth="10000.0" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" onAction="#submit" prefHeight="30.0" prefWidth="50.0" text="Skry" />
          </children>
       </AnchorPane>
       <AnchorPane fx:id="anchorPaneBullet" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
@@ -97,5 +98,11 @@
                </top>
             </BorderPane>
          </children></AnchorPane>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+         <children>
+            <Slider fx:id="slider" layoutX="22.0" layoutY="62.0" max="2.0" min="0.5" onMouseReleased="#slider_change" />
+            <TextField fx:id="text_slider" layoutX="18.0" layoutY="14.0" />
+         </children>
+      </AnchorPane>
    </children>
 </GridPane>
