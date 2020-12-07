@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckMenuItem?>
 <?import javafx.scene.control.ColorPicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -39,17 +43,17 @@
             <Button fx:id="zmensiBtn" mnemonicParsing="false" onAction="#decrease_font_size" text="Zmensi" BorderPane.alignment="CENTER" />
          </left>
       </BorderPane>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+      <AnchorPane fx:id="Kruh" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
          <children>
             <Button fx:id="dolavaBtn" mnemonicParsing="false" onAction="#circle_to_left" text="Doľava" />
             <Button fx:id="dopravaBtn" layoutX="121.0" layoutY="1.0" mnemonicParsing="false" onAction="#circle_to_right" text="Doprava" />
             <Circle fx:id="circle" fill="DODGERBLUE" layoutX="91.0" layoutY="65.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
          </children>
       </AnchorPane>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
+      <AnchorPane fx:id="duha" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
          <children>
             <Rectangle fx:id="rectangle" arcHeight="5.0" arcWidth="5.0" fill="#fffb1f" height="34.0" layoutX="56.0" layoutY="11.0" stroke="#005bff" strokeType="INSIDE" strokeWidth="3.0" width="72.0" />
-            <Button layoutX="66.0" layoutY="50.0" mnemonicParsing="false" onAction="#rectangle_rainbow" text="Dúha" />
+            <Button fx:id="Duhabutton" layoutX="66.0" layoutY="50.0" mnemonicParsing="false" onAction="#rectangle_rainbow" text="Dúha" />
          </children>
       </AnchorPane>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3">
@@ -71,6 +75,27 @@
             <Button layoutX="65.0" layoutY="14.0" mnemonicParsing="false" onAction="#bullet_start" text="Vystreľ" />
          </children>
       </AnchorPane>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+         <children>
+            <BorderPane layoutX="10.0" prefHeight="90.0" prefWidth="149.0">
+               <top>
+                  <MenuBar BorderPane.alignment="CENTER">
+                    <menus>
+                      <Menu mnemonicParsing="false" text="Panel">
+                        <items>
+                              <CheckMenuItem mnemonicParsing="false" onAction="#Duha_hide" selected="true" text="Dúha" />
+                              <CheckMenuItem mnemonicParsing="false" onAction="#Kruh_hide" selected="true" text="Kruh" />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Help">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="Návod" />
+                        </items>
+                      </Menu>
+                    </menus>
+                  </MenuBar>
+               </top>
+            </BorderPane>
+         </children></AnchorPane>
    </children>
 </GridPane>

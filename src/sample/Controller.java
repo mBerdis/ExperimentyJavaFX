@@ -1,10 +1,11 @@
 package sample;
 import javafx.animation.AnimationTimer;
-import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.*;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
@@ -20,6 +21,7 @@ public class Controller implements Initializable
     public Label labelAhoj;
     public Circle circle;
     public Rectangle rectangle;
+
 
     public Circle uloha5_circle;
     public ColorPicker outer_color;
@@ -136,4 +138,42 @@ public class Controller implements Initializable
         };
 
     }
+
+    //úloha9
+
+    public boolean check_duha =true;
+    @FXML
+    Pane duha;
+    public void Duha_hide()
+    {
+          if (check_duha)
+          {
+              duha.setVisible(false);
+              check_duha =false;
+          }
+          else
+          {
+              duha.setVisible(true);
+              check_duha =true;
+          }
+    }
+
+    public boolean check_kruh =true;
+    @FXML
+    Pane Kruh;
+    public void Kruh_hide()
+    {
+        if (check_kruh)
+        {
+            Kruh.setVisible(false);
+            check_kruh =false;
+        }
+        else
+        {
+            Kruh.setVisible(true);
+            check_kruh=true;
+        }
+    }
+
+
 }
