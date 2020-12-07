@@ -88,6 +88,7 @@ public class Controller implements Initializable
 
             login.setText("");
             password.setText("");
+
         }
     }
 
