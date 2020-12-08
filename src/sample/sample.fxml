@@ -100,8 +100,8 @@
          </children></AnchorPane>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
          <children>
-            <Slider fx:id="slider" layoutX="22.0" layoutY="62.0" max="2.0" min="0.5" onMouseReleased="#slider_change" />
-            <TextField fx:id="text_slider" layoutX="18.0" layoutY="14.0" />
+            <Slider fx:id="slider" layoutX="22.0" layoutY="62.0" max="2.0" min="0.5" onMouseReleased="#slider_change" value="1.0" />
+            <TextField fx:id="text_slider" layoutX="18.0" layoutY="14.0" text="50" />
          </children>
       </AnchorPane>
    </children>
