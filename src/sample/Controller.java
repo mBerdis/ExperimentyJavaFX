@@ -1,6 +1,5 @@
 package sample;
 import javafx.animation.AnimationTimer;
-import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
@@ -10,10 +9,8 @@ import javafx.scene.paint.*;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
-
 import java.net.URL;
 import java.util.ResourceBundle;
-
 public class Controller implements Initializable
 {
 
@@ -122,12 +119,12 @@ public class Controller implements Initializable
           if (check_duha)
           {
               duha.setVisible(false);
-              check_duha =false;
+              check_duha = false;
           }
           else
           {
               duha.setVisible(true);
-              check_duha =true;
+              check_duha = true;
           }
     }
 
@@ -137,12 +134,12 @@ public class Controller implements Initializable
         if (check_kruh)
         {
             Kruh.setVisible(false);
-            check_kruh =false;
+            check_kruh = false;
         }
         else
         {
             Kruh.setVisible(true);
-            check_kruh=true;
+            check_kruh = true;
         }
     }
 
