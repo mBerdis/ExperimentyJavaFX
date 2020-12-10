@@ -32,11 +32,13 @@ public class Controller implements Initializable
 
     public AnchorPane anchorPaneBullet;
     Rectangle bullet;
+    private boolean check_if_clicked = false;
     AnimationTimer timer;
+    private int speed;
 
-    public boolean check_duha =true;
+    private boolean check_duha = true;
     public Pane duha;
-    public boolean check_kruh =true;
+    private boolean check_kruh = true;
     public Pane Kruh;
 
     public Slider slider;
@@ -101,14 +103,17 @@ public class Controller implements Initializable
 
     public void bullet_start()
     {
-        bullet=new Rectangle(20,5,Color.BLACK);
+        if (check_if_clicked)
+        {
+            bullet.setFill(null);
+        }
+        speed = 5;
+        bullet = new Rectangle(20, 5, Color.BLACK);
         bullet.setY(50);
         bullet.setX(0);
         anchorPaneBullet.getChildren().add(bullet);
+        check_if_clicked = true;
         timer.start();
-
-
-
     }
 
     //úloha9
@@ -156,13 +161,13 @@ public class Controller implements Initializable
     {
         timer=new AnimationTimer()
         {
-            int speed = 5;
             @Override
             public void handle(long l)
             {
-                bullet.setX(bullet.getX() + speed);
-                if (bullet.getX()>=anchorPaneBullet.getPrefWidth()||
-                        bullet.getX()<=0) speed=-speed;
+                bullet.setLayoutX(bullet.getLayoutX() + speed);
+                System.out.println(bullet.getLayoutX() + " " + anchorPaneBullet.getWidth());
+                if (bullet.getLayoutX() >= anchorPaneBullet.getPrefWidth() ||
+                        bullet.getLayoutX() <= 0) speed = -speed;
 
             }
         };
