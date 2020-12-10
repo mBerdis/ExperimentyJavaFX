@@ -107,8 +107,7 @@ public class Controller implements Initializable
         anchorPaneBullet.getChildren().add(bullet);
         timer.start();
 
-
-
+        
     }
 
     //úloha9
