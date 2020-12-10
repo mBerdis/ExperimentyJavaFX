@@ -1,4 +1,5 @@
 package sample;
+
 import javafx.animation.AnimationTimer;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -34,9 +35,9 @@ public class Controller implements Initializable
     Rectangle bullet;
     AnimationTimer timer;
 
-    public boolean check_duha =true;
+    public boolean check_duha = true;
     public Pane duha;
-    public boolean check_kruh =true;
+    public boolean check_kruh = true;
     public Pane Kruh;
 
     public Slider slider;
@@ -54,17 +55,17 @@ public class Controller implements Initializable
 
     public void circle_to_left()
     {
-        circle.setCenterX(circle.getCenterX()-20);
+        circle.setCenterX(circle.getCenterX() - 20);
     }
 
     public void circle_to_right()
     {
-        circle.setCenterX(circle.getCenterX()+20);
+        circle.setCenterX(circle.getCenterX() + 20);
     }
 
     public void rectangle_rainbow()
     {
-        Stop[] stops = new Stop[] { new Stop(0, Color.RED), new Stop(1, Color.YELLOW)};
+        Stop[] stops = new Stop[]{new Stop(0, Color.RED), new Stop(1, Color.YELLOW)};
         LinearGradient linear = new LinearGradient(0, 0, 0, 1, true, CycleMethod.NO_CYCLE, stops);
         rectangle.setFill(linear);
     }
@@ -101,72 +102,63 @@ public class Controller implements Initializable
 
     public void bullet_start()
     {
-        bullet=new Rectangle(20,5,Color.BLACK);
+        bullet = new Rectangle(20, 5, Color.BLACK);
         bullet.setY(50);
         bullet.setX(0);
         anchorPaneBullet.getChildren().add(bullet);
         timer.start();
-
-        
     }
 
-    //úloha9
     public void Duha_hide()
     {
-          if (check_duha)
-          {
-              duha.setVisible(false);
-              check_duha =false;
-          }
-          else
-          {
-              duha.setVisible(true);
-              check_duha =true;
-          }
+        if (check_duha)
+        {
+            duha.setVisible(false);
+            check_duha = false;
+        }
+        else
+        {
+            duha.setVisible(true);
+            check_duha = true;
+        }
     }
-
 
     public void Kruh_hide()
     {
         if (check_kruh)
         {
             Kruh.setVisible(false);
-            check_kruh =false;
+            check_kruh = false;
         }
         else
         {
             Kruh.setVisible(true);
-            check_kruh=true;
+            check_kruh = true;
         }
     }
 
-
-
-    //úloha10
-
-   public void slider_change()
-   {
-   hide.setPrefWidth(50*slider.getValue());
-   text_slider.setText(String.valueOf(50*slider.getValue()));
-   }
+    public void slider_change()
+    {
+        hide.setPrefWidth(50 * slider.getValue());
+        text_slider.setText(String.valueOf(50 * slider.getValue()));
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
-        timer=new AnimationTimer()
+        timer = new AnimationTimer()
         {
             int speed = 5;
+
             @Override
             public void handle(long l)
             {
                 bullet.setX(bullet.getX() + speed);
-                if (bullet.getX()>=anchorPaneBullet.getPrefWidth()||
-                        bullet.getX()<=0) speed=-speed;
+                if (bullet.getX() >= anchorPaneBullet.getPrefWidth() ||
+                        bullet.getX() <= 0) speed = -speed;
 
             }
         };
-
     }
-
 
 }
