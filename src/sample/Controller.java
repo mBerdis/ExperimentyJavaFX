@@ -22,7 +22,6 @@ public class Controller implements Initializable
     public Circle circle;
     public Rectangle rectangle;
 
-
     public Circle uloha5_circle;
     public ColorPicker outer_color;
     public ColorPicker inner_color;
@@ -34,11 +33,12 @@ public class Controller implements Initializable
     public AnchorPane anchorPaneBullet;
     Rectangle bullet;
     AnimationTimer timer;
-    boolean toRight=true;
+
     public boolean check_duha =true;
     public Pane duha;
     public boolean check_kruh =true;
     public Pane Kruh;
+
     public Slider slider;
     public TextField text_slider;
 
@@ -96,7 +96,6 @@ public class Controller implements Initializable
 
             login.setText("");
             password.setText("");
-
         }
     }
 
@@ -112,42 +111,7 @@ public class Controller implements Initializable
 
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle)
-    {
-            timer=new AnimationTimer()
-            {
-            @Override
-            public void handle(long l)
-            {
-                if (toRight)
-                {
-                    bullet.setX(bullet.getX()+5);
-                    if (bullet.getX()>anchorPaneBullet.getPrefWidth())
-                    {
-                        toRight=false;
-                        bullet.setX(anchorPaneBullet.getPrefWidth());
-                    }
-                }
-                else
-                {
-                    bullet.setX(bullet.getX() - 5);
-
-                    if (bullet.getX() < 0)
-                    {
-                        toRight = true;
-                        bullet.setX(0);
-                    }
-
-                }
-            }
-        };
-
-    }
-
     //úloha9
-
-
     public void Duha_hide()
     {
           if (check_duha)
@@ -186,6 +150,24 @@ public class Controller implements Initializable
    hide.setPrefWidth(50*slider.getValue());
    text_slider.setText(String.valueOf(50*slider.getValue()));
    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle)
+    {
+        timer=new AnimationTimer()
+        {
+            int speed = 5;
+            @Override
+            public void handle(long l)
+            {
+                bullet.setX(bullet.getX() + speed);
+                if (bullet.getX()>=anchorPaneBullet.getPrefWidth()||
+                        bullet.getX()<=0) speed=-speed;
+
+            }
+        };
+
+    }
 
 
 }
