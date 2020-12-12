@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckMenuItem?>
 <?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
@@ -84,24 +85,24 @@
          <children>
             <BorderPane layoutX="10.0" prefHeight="90.0" prefWidth="149.0">
                <top>
-                  <MenuBar BorderPane.alignment="CENTER">
-                      <menus>
-                          <Menu mnemonicParsing="false" text="Panel">
-                              <items>
-                                  <CheckMenuItem mnemonicParsing="false" onAction="#Duha_hide" selected="true"
-                                                 text="Dúha"/>
-                                  <CheckMenuItem mnemonicParsing="false" onAction="#Kruh_hide" selected="true"
-                                                 text="Kruh"/>
-                                  <MenuItem mnemonicParsing="false" onAction="#image_change" text="Obrazok"/>
-                              </items>
-                          </Menu>
-                          <Menu mnemonicParsing="false" text="Help">
-                              <items>
-                                  <MenuItem mnemonicParsing="false" text="Návod"/>
-                              </items>
-                          </Menu>
-                      </menus>
-                  </MenuBar>
+                   <MenuBar BorderPane.alignment="CENTER">
+                       <menus>
+                           <Menu mnemonicParsing="false" text="Panel">
+                               <items>
+                                   <CheckMenuItem mnemonicParsing="false" onAction="#Duha_hide" selected="true"
+                                                  text="Dúha"/>
+                                   <CheckMenuItem mnemonicParsing="false" onAction="#Kruh_hide" selected="true"
+                                                  text="Kruh"/>
+                                   <MenuItem mnemonicParsing="false" onAction="#image_change" text="Obrazok"/>
+                               </items>
+                           </Menu>
+                           <Menu mnemonicParsing="false" text="Help">
+                               <items>
+                                   <MenuItem mnemonicParsing="false" onAction="#showNavod" text="Návod"/>
+                               </items>
+                           </Menu>
+                       </menus>
+                   </MenuBar>
                </top>
             </BorderPane>
          </children>
@@ -137,5 +138,11 @@
                <Image url="@../images/JavaFX_Logo.png"/>
            </image>
        </ImageView>
+       <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+           <top>
+               <ComboBox fx:id="comboBox" onAction="#shapeShow" prefWidth="150.0" promptText="Shapes"
+                         BorderPane.alignment="CENTER"/>
+           </top>
+       </BorderPane>
    </children>
 </GridPane>

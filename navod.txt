@@ -9,4 +9,8 @@
 9.uloha-Autor{Matej Koscelník};Zavolanie metody duha/kruh_hide(), nastavenie visibility v zavislosti od toho, ci je momentalne Pane viditelny alebo nie
 10.uloha-Autor{Matej Koscelník};Metoda slider_change(), nastavenie sirky tlacidla na hodnotu vytiahnutu zo slider, v textovom poli tu hodnotu zobrazujeme
 11.uloha-Autor{Dávid Mihalčin};Vyuzili sme Listener, ktory pocuva a pri zmene polohy rozdelovaca ihned hodnotu polohy(od 0.0 po 1.0) rozdelovaca zapise do TextField
-12.uloha-
+12.uloha-Autor{Dávid Mihalčin};Metoda image_change(), pomocou file chooser, otvorime dialogove okno a vyberieme obrazok, ten sa ulozi do File, ak sa nerovna null, povodny obrazok nahradime novym
+13.uloha-
+14.uloha-
+Modalita urcuje to, ci okno bude blokovat dalsie okna rovnakou aplikáciou JavaFX.
+Show()-okamzite zviditelny stage a ukonci metodu show(), showAndWait()-zobrazi stage a potom blokuje pokial sa stage nezavrie.

@@ -1,8 +1,11 @@
 package sample;
 import javafx.animation.AnimationTimer;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -10,13 +13,17 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.*;
-import javafx.scene.shape.Circle;
-import javafx.scene.shape.Rectangle;
+import javafx.scene.shape.*;
 import javafx.scene.text.Font;
 import javafx.stage.FileChooser;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.ResourceBundle;
@@ -54,6 +61,10 @@ public class Controller implements Initializable
     public TextField textFieldUloha11;
 
     public ImageView imageU12;
+
+    public ComboBox<Shape> comboBox;
+
+    public TextArea textAreaU14;
 
 
     //uloha 2
@@ -192,6 +203,20 @@ public class Controller implements Initializable
             imageU12.setImage(image);
         }
     }
+    //uloha 13
+
+    public void shapeShow(ActionEvent actionEvent)
+    {
+
+        System.out.println(comboBox.getValue());
+    }
+
+    //uloha 14
+
+    public void showNavod(ActionEvent actionEvent) throws IOException
+    {
+
+    }
 
 
     @Override
@@ -204,7 +229,6 @@ public class Controller implements Initializable
             public void handle(long l)
             {
                 bullet.setLayoutX(bullet.getLayoutX() + speed);
-                System.out.println(bullet.getLayoutX() + " " + anchorPaneBullet.getWidth());
                 if (bullet.getLayoutX() >= anchorPaneBullet.getPrefWidth() ||
                         bullet.getLayoutX() <= 0) speed = -speed;
 
