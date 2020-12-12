@@ -9,7 +9,11 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -81,28 +85,57 @@
             <BorderPane layoutX="10.0" prefHeight="90.0" prefWidth="149.0">
                <top>
                   <MenuBar BorderPane.alignment="CENTER">
-                    <menus>
-                      <Menu mnemonicParsing="false" text="Panel">
-                        <items>
-                              <CheckMenuItem mnemonicParsing="false" onAction="#Duha_hide" selected="true" text="Dúha" />
-                              <CheckMenuItem mnemonicParsing="false" onAction="#Kruh_hide" selected="true" text="Kruh" />
-                        </items>
-                      </Menu>
-                      <Menu mnemonicParsing="false" text="Help">
-                        <items>
-                          <MenuItem mnemonicParsing="false" text="Návod" />
-                        </items>
-                      </Menu>
-                    </menus>
+                      <menus>
+                          <Menu mnemonicParsing="false" text="Panel">
+                              <items>
+                                  <CheckMenuItem mnemonicParsing="false" onAction="#Duha_hide" selected="true"
+                                                 text="Dúha"/>
+                                  <CheckMenuItem mnemonicParsing="false" onAction="#Kruh_hide" selected="true"
+                                                 text="Kruh"/>
+                                  <MenuItem mnemonicParsing="false" onAction="#image_change" text="Obrazok"/>
+                              </items>
+                          </Menu>
+                          <Menu mnemonicParsing="false" text="Help">
+                              <items>
+                                  <MenuItem mnemonicParsing="false" text="Návod"/>
+                              </items>
+                          </Menu>
+                      </menus>
                   </MenuBar>
                </top>
             </BorderPane>
-         </children></AnchorPane>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
-         <children>
-            <Slider fx:id="slider" layoutX="22.0" layoutY="62.0" max="2.0" min="0.5" onMouseReleased="#slider_change" value="1.0" />
-            <TextField fx:id="text_slider" layoutX="18.0" layoutY="14.0" text="50" />
          </children>
       </AnchorPane>
+       <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+           <children>
+               <Slider fx:id="slider" layoutX="22.0" layoutY="62.0" max="2.0" min="0.5" onMouseReleased="#slider_change"
+                       value="1.0"/>
+               <TextField fx:id="text_slider" layoutX="18.0" layoutY="14.0" text="50"/>
+           </children>
+       </AnchorPane>
+       <SplitPane fx:id="splitPaneU11" dividerPositions="0.5" prefHeight="160.0" prefWidth="200.0"
+                  GridPane.rowIndex="2">
+           <items>
+               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                   <children>
+                       <TextArea layoutX="5.0" prefHeight="52.0" prefWidth="78.0"/>
+                       <TextField fx:id="textFieldUloha11" layoutX="4.0" layoutY="62.0" prefHeight="26.0"
+                                  prefWidth="87.0"/>
+                   </children>
+               </AnchorPane>
+               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                   <children>
+                       <Circle fill="DODGERBLUE" layoutX="62.0" layoutY="44.0" radius="30.0" stroke="BLACK"
+                               strokeType="INSIDE"/>
+                   </children>
+               </AnchorPane>
+           </items>
+       </SplitPane>
+       <ImageView fx:id="imageU12" fitHeight="73.0" fitWidth="123.0" pickOnBounds="true" preserveRatio="true"
+                  GridPane.columnIndex="1" GridPane.rowIndex="2">
+           <image>
+               <Image url="@../images/JavaFX_Logo.png"/>
+           </image>
+       </ImageView>
    </children>
 </GridPane>

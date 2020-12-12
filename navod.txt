@@ -1,0 +1,12 @@
+1.uloha-Autor{Maroš berdis};Meno a popis nastavime v Main.java,vzhlad gridpane nastavujeme v sample.fxml
+2.uloha-Autor{Dávid Mihalčin};Zabezpecene metodami increase/decrease_font_size(), v ktorych sme si vytiahli aktualnu velkost a nastavili ju podla poziadvky
+3.uloha-Autor{Dávid Mihalčin};Posuvanie sme zabezpecili metodami circle_to_left/right(), v ktorych sme menili X suradnice
+4.uloha-Autor{Dávid Mihalčin};Metoda rectangle_rainbow(), najprv vytvorenie vlastnej farby(linearGradient-cerveno zlty) a tak cez setFill nastavenie farby obdlznika
+5.uloha-Autor{Maroš berdis};Dve metody, v jednej cez setStroke sme zadefinovali farbu obvodovej ciary a v druhej farbu vyplne, farby sme tahali z colorPicker-a
+6.uloha-Autor{Maroš berdis};Metoda submit(), overime meno a heslo, ak je spravne tak skryjeme/odkryjeme Borderpane, zmenime popis tlacidla
+7.uloha-Autor{Dávid Mihalčin};Metoda bullet_start(), Vytvorime novy obdlznik, nastavime pociatocne suradnice, pridame obdlzik do AnchorPane, spustime casovac ktory pripocitava/odpocitava X suradnicu
+8.uloha-Autor{Dávid Mihalčin};Napisanie tohto navodu
+9.uloha-Autor{Matej Koscelník};Zavolanie metody duha/kruh_hide(), nastavenie visibility v zavislosti od toho, ci je momentalne Pane viditelny alebo nie
+10.uloha-Autor{Matej Koscelník};Metoda slider_change(), nastavenie sirky tlacidla na hodnotu vytiahnutu zo slider, v textovom poli tu hodnotu zobrazujeme
+11.uloha-Autor{Dávid Mihalčin};Vyuzili sme Listener, ktory pocuva a pri zmene polohy rozdelovaca ihned hodnotu polohy(od 0.0 po 1.0) rozdelovaca zapise do TextField
+12.uloha-

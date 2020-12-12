@@ -1,7 +1,11 @@
 package sample;
 import javafx.animation.AnimationTimer;
+import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
@@ -9,7 +13,12 @@ import javafx.scene.paint.*;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
+
+import java.io.File;
 import java.net.URL;
+import java.util.Arrays;
 import java.util.ResourceBundle;
 public class Controller implements Initializable
 {
@@ -41,6 +50,14 @@ public class Controller implements Initializable
     public Slider slider;
     public TextField text_slider;
 
+    public SplitPane splitPaneU11;
+    public TextField textFieldUloha11;
+
+    public ImageView imageU12;
+
+
+    //uloha 2
+
     public void decrease_font_size()
     {
         labelAhoj.setFont(new Font(labelAhoj.getFont().getSize() - 20));
@@ -51,22 +68,28 @@ public class Controller implements Initializable
         labelAhoj.setFont(new Font(labelAhoj.getFont().getSize() + 20));
     }
 
+    //uloha 3
+
     public void circle_to_left()
     {
-        circle.setCenterX(circle.getCenterX()-20);
+        circle.setCenterX(circle.getCenterX() - 20);
     }
 
     public void circle_to_right()
     {
-        circle.setCenterX(circle.getCenterX()+20);
+        circle.setCenterX(circle.getCenterX() + 20);
     }
+
+    //uloha 4
 
     public void rectangle_rainbow()
     {
-        Stop[] stops = new Stop[] { new Stop(0, Color.RED), new Stop(1, Color.YELLOW)};
+        Stop[] stops = new Stop[]{new Stop(0, Color.RED), new Stop(1, Color.YELLOW)};
         LinearGradient linear = new LinearGradient(0, 0, 0, 1, true, CycleMethod.NO_CYCLE, stops);
         rectangle.setFill(linear);
     }
+
+    //uloha 5
 
     public void change_outer_color()
     {
@@ -77,6 +100,8 @@ public class Controller implements Initializable
     {
         uloha5_circle.setFill(inner_color.getValue());
     }
+
+    //uloha 6
 
     public void submit()
     {
@@ -98,6 +123,8 @@ public class Controller implements Initializable
         }
     }
 
+    //uloha 7
+
     public void bullet_start()
     {
         if (check_if_clicked)
@@ -113,7 +140,7 @@ public class Controller implements Initializable
         timer.start();
     }
 
-    //úloha9
+    //úloha 9
     public void Duha_hide()
     {
           if (check_duha)
@@ -144,19 +171,34 @@ public class Controller implements Initializable
     }
 
 
-
     //úloha10
 
-   public void slider_change()
-   {
-   hide.setPrefWidth(50*slider.getValue());
-   text_slider.setText(String.valueOf(50*slider.getValue()));
-   }
+    public void slider_change()
+    {
+        hide.setPrefWidth(50 * slider.getValue());
+        text_slider.setText(String.valueOf(50 * slider.getValue()));
+    }
+
+    //uloha 12
+    public void image_change()
+    {
+        FileChooser.ExtensionFilter imageFilter = new FileChooser.ExtensionFilter("Image Files", "*.jpg", "*.png");
+        FileChooser fc = new FileChooser();
+        fc.getExtensionFilters().add(imageFilter);
+        File file = fc.showOpenDialog(new Stage());
+        if (file != null)
+        {
+            Image image = new Image(file.toURI().toString());
+            imageU12.setImage(image);
+        }
+    }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
-        timer=new AnimationTimer()
+        //casovac pre ulohu 7
+        timer = new AnimationTimer()
         {
             @Override
             public void handle(long l)
@@ -169,7 +211,10 @@ public class Controller implements Initializable
             }
         };
 
+        // uloha11
+        splitPaneU11.getDividers().get(0).positionProperty().addListener((obs, oldVal, newVal) ->
+        {
+            textFieldUloha11.setText(String.valueOf(newVal.doubleValue()));
+        });
     }
-
-
 }
