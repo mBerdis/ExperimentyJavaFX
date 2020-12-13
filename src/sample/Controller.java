@@ -64,8 +64,6 @@ public class Controller implements Initializable
     public ComboBox<Shape> comboBox;
     public BorderPane borderPane_U13;
 
-    public TextArea textAreaU14;
-
 
     //uloha 2
 
@@ -238,6 +236,7 @@ public class Controller implements Initializable
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
         //casovac pre ulohu 7
+
         timer = new AnimationTimer()
         {
             @Override
@@ -251,9 +250,10 @@ public class Controller implements Initializable
         };
 
         // uloha11
+
         splitPaneU11.getDividers().get(0).positionProperty().addListener((obs, oldVal, newVal) ->
         {
-            textFieldUloha11.setText(String.valueOf(newVal.doubleValue()));
+            textFieldUloha11.setText("L: " + Math.round(newVal.doubleValue() * 100) + "% R: " + (100 - Math.round(newVal.doubleValue() * 100)) + "%");
         });
 
         // uloha13
@@ -261,7 +261,6 @@ public class Controller implements Initializable
         Circle circle_13 = new Circle(20, 5, 10, Color.BLACK);
         Rectangle rectangle_13 = new Rectangle(20, 5, Color.BLACK);
         Ellipse ellipse_13 = new Ellipse(20, 5, 10, 5);
-
         ObservableList<Shape> options = FXCollections.observableArrayList(circle_13, rectangle_13, ellipse_13);
         comboBox.setItems(options);
 
