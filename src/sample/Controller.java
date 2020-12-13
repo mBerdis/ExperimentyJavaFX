@@ -18,7 +18,6 @@ import javafx.scene.text.Font;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.util.Callback;
 
 import java.io.File;
 import java.io.IOException;
@@ -62,10 +61,8 @@ public class Controller implements Initializable
 
     public ImageView imageU12;
 
-    public ComboBox<String> comboBox;
+    public ComboBox<Shape> comboBox;
     public BorderPane borderPane_U13;
-
-    public TextArea textAreaU14;
 
 
     //uloha 2
@@ -208,22 +205,7 @@ public class Controller implements Initializable
 
     public void shapeShow(ActionEvent actionEvent)
     {
-        Circle circle_13 = new Circle(20, 5, 10, Color.BLACK);
-        Rectangle rectangle_13 = new Rectangle(20, 5, Color.BLACK);
-        Ellipse ellipse_13 = new Ellipse(20, 5, 10, 5);
-
-        switch (comboBox.getValue())
-        {
-            case "Circle":
-                borderPane_U13.setCenter(circle_13);
-                break;
-            case "Rectangle":
-                borderPane_U13.setCenter(rectangle_13);
-                break;
-            case "Ellipse":
-                borderPane_U13.setCenter(ellipse_13);
-                break;
-        }
+        borderPane_U13.setCenter(comboBox.getValue());
     }
 
     //uloha 14
@@ -249,10 +231,12 @@ public class Controller implements Initializable
 
     }
 
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
         //casovac pre ulohu 7
+
         timer = new AnimationTimer()
         {
             @Override
@@ -266,14 +250,20 @@ public class Controller implements Initializable
         };
 
         // uloha11
+
         splitPaneU11.getDividers().get(0).positionProperty().addListener((obs, oldVal, newVal) ->
         {
-            textFieldUloha11.setText(String.valueOf(newVal.doubleValue()));
+            textFieldUloha11.setText("L: " + Math.round(newVal.doubleValue() * 100) + "% R: " + (100 - Math.round(newVal.doubleValue() * 100)) + "%");
         });
 
         // uloha13
-        ObservableList<String> options = FXCollections.observableArrayList("Circle", "Rectangle", "Ellipse");
+
+        Circle circle_13 = new Circle(20, 5, 10, Color.BLACK);
+        Rectangle rectangle_13 = new Rectangle(20, 5, Color.BLACK);
+        Ellipse ellipse_13 = new Ellipse(20, 5, 10, 5);
+        ObservableList<Shape> options = FXCollections.observableArrayList(circle_13, rectangle_13, ellipse_13);
         comboBox.setItems(options);
+
 
     }
 }

@@ -1,16 +1,16 @@
-1.uloha-Autor{Maroš berdis};Meno a popis nastavime v Main.java,vzhlad gridpane nastavujeme v sample.fxml
-2.uloha-Autor{Dávid Mihalčin};Zabezpecene metodami increase/decrease_font_size(), v ktorych sme si vytiahli aktualnu velkost a nastavili ju podla poziadvky
+1.uloha-Autor{Maroš Berdis};Meno a popis nastavime v Main.java,vzhlad gridpane nastavujeme v sample.fxml
+2.uloha-Autor{Maroš Berdis};Zabezpecene metodami increase/decrease_font_size(), v ktorych sme si vytiahli aktualnu velkost a nastavili ju podla poziadvky
 3.uloha-Autor{Dávid Mihalčin};Posuvanie sme zabezpecili metodami circle_to_left/right(), v ktorych sme menili X suradnice
 4.uloha-Autor{Dávid Mihalčin};Metoda rectangle_rainbow(), najprv vytvorenie vlastnej farby(linearGradient-cerveno zlty) a tak cez setFill nastavenie farby obdlznika
-5.uloha-Autor{Maroš berdis};Dve metody, v jednej cez setStroke sme zadefinovali farbu obvodovej ciary a v druhej farbu vyplne, farby sme tahali z colorPicker-a
-6.uloha-Autor{Maroš berdis};Metoda submit(), overime meno a heslo, ak je spravne tak skryjeme/odkryjeme Borderpane, zmenime popis tlacidla
+5.uloha-Autor{Maroš Berdis};Dve metody, v jednej cez setStroke sme zadefinovali farbu obvodovej ciary a v druhej farbu vyplne, farby sme tahali z colorPicker-a
+6.uloha-Autor{Maroš Berdis};Metoda submit(), overime meno a heslo, ak je spravne tak skryjeme/odkryjeme Borderpane, zmenime popis tlacidla
 7.uloha-Autor{Dávid Mihalčin};Metoda bullet_start(), Vytvorime novy obdlznik, nastavime pociatocne suradnice, pridame obdlzik do AnchorPane, spustime casovac ktory pripocitava/odpocitava X suradnicu
 8.uloha-Autor{Dávid Mihalčin};Napisanie tohto navodu
 9.uloha-Autor{Matej Koscelník};Zavolanie metody duha/kruh_hide(), nastavenie visibility v zavislosti od toho, ci je momentalne Pane viditelny alebo nie
 10.uloha-Autor{Matej Koscelník};Metoda slider_change(), nastavenie sirky tlacidla na hodnotu vytiahnutu zo slider, v textovom poli tu hodnotu zobrazujeme
-11.uloha-Autor{Dávid Mihalčin};Vyuzili sme Listener, ktory pocuva a pri zmene polohy rozdelovaca ihned hodnotu polohy(od 0.0 po 1.0) rozdelovaca zapise do TextField
+11.uloha-Autor{Dávid Mihalčin};Vyuzili sme Listener, ktory pocuva a pri zmene polohy rozdelovaca, vypocita velkost lavej a pravej strany v percentach a zapise do TextField
 12.uloha-Autor{Dávid Mihalčin};Metoda image_change(), pomocou file chooser, otvorime dialogove okno a vyberieme obrazok, ten sa ulozi do File, ak sa nerovna null, povodny obrazok nahradime novym
 13.uloha-Autor{Maroš Berdis};V metode shapeShow() zobrazíme vybraný Shape z ComboBox z predom definovaných možnosti v metóde initialize().
 14.uloha-Autor{Dávid Mihalčin};Vytvorili sme novy fxml subor a controller pre nove okno s navodom, po riadkoch sme pridavali text do textarea.
-Modalita urcuje to, ci okno bude blokovat dalsie okna rovnakou aplikáciou JavaFX.
+Modalita urcuje to, ci okno bude blokovat dalsie okna rovnakej aplikácie JavaFX.
 Show()-okamzite zviditelny stage a ukonci metodu show(), showAndWait()-zobrazi stage a potom blokuje pokial sa stage nezavrie.
