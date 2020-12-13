@@ -18,6 +18,7 @@ import javafx.scene.text.Font;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 
 import java.io.File;
 import java.io.IOException;
@@ -61,7 +62,7 @@ public class Controller implements Initializable
 
     public ImageView imageU12;
 
-    public ComboBox<Shape> comboBox;
+    public ComboBox<String> comboBox;
     public BorderPane borderPane_U13;
 
     public TextArea textAreaU14;
@@ -207,7 +208,22 @@ public class Controller implements Initializable
 
     public void shapeShow(ActionEvent actionEvent)
     {
-        borderPane_U13.setCenter(comboBox.getValue());
+        Circle circle_13 = new Circle(20, 5, 10, Color.BLACK);
+        Rectangle rectangle_13 = new Rectangle(20, 5, Color.BLACK);
+        Ellipse ellipse_13 = new Ellipse(20, 5, 10, 5);
+
+        switch (comboBox.getValue())
+        {
+            case "Circle":
+                borderPane_U13.setCenter(circle_13);
+                break;
+            case "Rectangle":
+                borderPane_U13.setCenter(rectangle_13);
+                break;
+            case "Ellipse":
+                borderPane_U13.setCenter(ellipse_13);
+                break;
+        }
     }
 
     //uloha 14
@@ -233,7 +249,6 @@ public class Controller implements Initializable
 
     }
 
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
@@ -257,14 +272,8 @@ public class Controller implements Initializable
         });
 
         // uloha13
-
-        Circle circle_13 = new Circle(20, 5, 10, Color.BLACK);
-        Rectangle rectangle_13 = new Rectangle(20, 5, Color.BLACK);
-        Ellipse ellipse_13 = new Ellipse(20, 5, 10, 5);
-
-        ObservableList<Shape> options = FXCollections.observableArrayList(circle_13, rectangle_13, ellipse_13);
+        ObservableList<String> options = FXCollections.observableArrayList("Circle", "Rectangle", "Ellipse");
         comboBox.setItems(options);
-
 
     }
 }
