@@ -1,5 +1,7 @@
 package sample;
 import javafx.animation.AnimationTimer;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -60,6 +62,7 @@ public class Controller implements Initializable
     public ImageView imageU12;
 
     public ComboBox<Shape> comboBox;
+    public BorderPane borderPane_U13;
 
     public TextArea textAreaU14;
 
@@ -204,8 +207,7 @@ public class Controller implements Initializable
 
     public void shapeShow(ActionEvent actionEvent)
     {
-
-        System.out.println(comboBox.getValue());
+        borderPane_U13.setCenter(comboBox.getValue());
     }
 
     //uloha 14
@@ -253,5 +255,16 @@ public class Controller implements Initializable
         {
             textFieldUloha11.setText(String.valueOf(newVal.doubleValue()));
         });
+
+        // uloha13
+
+        Circle circle_13 = new Circle(20, 5, 10, Color.BLACK);
+        Rectangle rectangle_13 = new Rectangle(20, 5, Color.BLACK);
+        Ellipse ellipse_13 = new Ellipse(20, 5, 10, 5);
+
+        ObservableList<Shape> options = FXCollections.observableArrayList(circle_13, rectangle_13, ellipse_13);
+        comboBox.setItems(options);
+
+
     }
 }

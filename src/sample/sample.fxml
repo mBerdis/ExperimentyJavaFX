@@ -138,7 +138,8 @@
                <Image url="@../images/JavaFX_Logo.png"/>
            </image>
        </ImageView>
-       <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+       <BorderPane fx:id="borderPane_U13" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2"
+                   GridPane.rowIndex="2">
            <top>
                <ComboBox fx:id="comboBox" onAction="#shapeShow" prefWidth="150.0" promptText="Shapes"
                          BorderPane.alignment="CENTER"/>
